@@ -14,7 +14,6 @@ const app = () => {
   const feelsElement = document.querySelector('feels-like')
 
   const buttonFindClicked = async () => {
-    // TODO: tinggal destructer hasil dari geoloacation jangan lupa pake await
     const position = await GeoLocation.location()
     const apiResult = await FectchAPI.api(position[0], position[1])
     findElement.userLocation = apiResult.city.name
@@ -23,7 +22,6 @@ const app = () => {
     windElement.userWind = apiResult.list[0]
     feelsElement.userFeels = apiResult.list[0]
   }
-  console.log(process.env.API_KEY)
   findElement.clickEvent = buttonFindClicked
 }
 

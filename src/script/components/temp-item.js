@@ -15,7 +15,6 @@ class TempItem extends HTMLElement {
 
   set temps(temperature){
     this._items = temperature
-    console.log(this._items.main)
     this.tempMain = (this._items.main.temp - 273).toFixed(2)
     this.tempMax = (this._items.main.temp_max - 273).toFixed(2)
     this.tempMin = (this._items.main.temp_min - 273).toFixed(2)
